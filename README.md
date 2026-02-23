@@ -1,5 +1,9 @@
 # Fluxenrath
 
+<p align="center">
+  <img src="./assets/branding/logo.svg" alt="Fluxenrath logo" width="88" />
+</p>
+
 ![Language](https://img.shields.io/badge/language-Python%203.11%2B-blue)
 ![License](https://img.shields.io/github/license/smouj/Fluxenrath)
 ![Last Commit](https://img.shields.io/github/last-commit/smouj/Fluxenrath)
