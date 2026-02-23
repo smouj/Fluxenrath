@@ -18,7 +18,7 @@
 **Workflow forge for resilient local-first automations.**
 
 ## Vision
-Fluxenrath is a production-oriented skill in the **smouj SuperAgents Universe**. It is designed to solve a concrete operational problem with local-first execution, transparent reasoning traces, and practical safety controls. The architecture prioritizes free/open-source tooling, deterministic behavior, and modular integration with other autonomous skills.
+Fluxenrath is a workflow automation skill that builds and runs resilient task pipelines with retries, guards, and clear state transitions. It enables local-first orchestration of multi-step operations with reliability and observability by default.
 
 ## Core Superpower
 - ⚡ **Composable automation graphs with self-healing retries**
