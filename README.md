@@ -7,7 +7,7 @@
 ![Language](https://img.shields.io/badge/language-Python%203.11%2B-blue)
 ![License](https://img.shields.io/github/license/smouj/Fluxenrath)
 ![Last Commit](https://img.shields.io/github/last-commit/smouj/Fluxenrath)
-![CI](https://img.shields.io/badge/CI-planned-lightgrey)
+![CI](https://img.shields.io/github/actions/workflow/status/smouj/Fluxenrath/ci.yml?branch=main)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20this%20project-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/smouj013_dev)
 
 <p align="center">
@@ -15,63 +15,44 @@
   <a href="./README.es.md"><img src="https://img.shields.io/badge/README-Español-c92a2a?style=for-the-badge" alt="Español"></a>
 </p>
 
-**Workflow forge for resilient local-first automations.**
+**Workflow automation forge with resilient execution semantics.**
 
 ## Vision
-Fluxenrath is a workflow automation skill that builds and runs resilient task pipelines with retries, guards, and clear state transitions. It enables local-first orchestration of multi-step operations with reliability and observability by default.
+Executes DAG-style workflows with guardrails, retries, and traceable outcomes.
 
-## Core Superpower
-- ⚡ **Composable automation graphs with self-healing retries**
+## What problem it solves
+Automation flows fail without robust retries and state guarantees.
 
-## Current Status (February 2026)
-- 🚧 Ideation and robust scaffolding phase
-- Next milestones:
-  - [ ] Finalize domain contracts and interfaces
-  - [ ] Ship a minimal runnable CLI command
-  - [ ] Add Ollama local model profile and fallback strategy
-  - [ ] Implement one complete end-to-end example
-  - [ ] Add quality gates (lint, typecheck, test)
-  - [ ] Publish architecture and operational runbook
+## Core superpower
+- ⚡ **Composable workflow engine with reliability-first orchestration**
 
-## Planned Architecture (free/open-source stack)
-- **Primary language:** Python 3.11+
-- **Agent framework:** LangGraph
-- **Local models:** Ollama (Llama 3.1, Qwen2.5, DeepSeek-Coder, Mistral)
-- **Core dependencies:** httpx, sqlalchemy, pydantic, tenacity, typer
-- **Execution model:** local-first, optional self-hosted deployment
-
-## Capability Blueprint
-- ✅ Workflow graph DSL
-- ✅ Retry orchestration
-- ✅ Idempotent steps
-- ✅ Secrets abstraction
-- ✅ Observability hooks
+## Key use cases
+- ✅ Task orchestration
+- ✅ Pipeline automation
+- ✅ Self-healing retries
+- ✅ Local-first ops workflows
 
 
-## Project Structure
-```text
-Fluxenrath/
-├── src/fluxenrath/
-│   ├── core/           # domain orchestration and policies
-│   ├── adapters/       # external integrations and tool bridges
-│   ├── memory/         # state, retrieval, and context strategies
-│   └── cli.py          # local operator command interface
-├── docs/
-│   ├── IMPLEMENTATION.md
-│   ├── ARCHITECTURE.md
-│   └── RUNBOOK.md
-├── examples/
-├── tests/
-├── requirements.txt
-└── README.md
-```
+## API surface
+`GET /`, `POST /run` (planned), `GET /health`
 
-## Quick Start
+## Technical stack
+- **Core stack:** FastAPI + workflow graph runtime
+- **Runtime:** local-first, self-hosted friendly
+- **Infra:** Docker Compose + Caddy + Redis/Chroma/Ollama compatibility
+
+## Current status (Feb 2026)
+- ✅ Public scaffold available
+- ✅ Bilingual README (EN default + ES)
+- ✅ CI + release baseline configured
+- 🚧 Feature hardening in progress
+
+## Quick start
 ```bash
 git clone https://github.com/smouj/Fluxenrath.git
 cd Fluxenrath
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.fluxenrath.cli --help
 ```
@@ -83,10 +64,9 @@ python -m src.fluxenrath.cli --help
 - [Deployment Guide](./docs/DEPLOYMENT.md)
 - [Release Process](./docs/RELEASE.md)
 - [Changelog](./CHANGELOG.md)
-- [Contributing](./CONTRIBUTING.md)
 
 ## Contributing
-Contributions are welcome. Please read **CONTRIBUTING.md** before opening issues or PRs.
+Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 MIT © 2026 smouj

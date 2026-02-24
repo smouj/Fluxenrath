@@ -1,13 +1,13 @@
 # Fluxenrath
 
 <p align="center">
-  <img src="./assets/branding/logo.svg" alt="Fluxenrath logo" width="88" />
+  <img src="./assets/branding/logo.svg" alt="Logo de Fluxenrath" width="88" />
 </p>
 
 ![Language](https://img.shields.io/badge/language-Python%203.11%2B-blue)
 ![License](https://img.shields.io/github/license/smouj/Fluxenrath)
 ![Last Commit](https://img.shields.io/github/last-commit/smouj/Fluxenrath)
-![CI](https://img.shields.io/badge/CI-planned-lightgrey)
+![CI](https://img.shields.io/github/actions/workflow/status/smouj/Fluxenrath/ci.yml?branch=main)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20this%20project-ff5f5f?logo=ko-fi&logoColor=white)](https://ko-fi.com/smouj013_dev)
 
 <p align="center">
@@ -15,63 +15,44 @@
   <a href="./README.es.md"><img src="https://img.shields.io/badge/README-Español-c92a2a?style=for-the-badge" alt="Español"></a>
 </p>
 
-**Workflow forge for resilient local-first automations.**
+**Workflow automation forge with resilient execution semantics.**
 
 ## Visión
-Fluxenrath es una skill de automatización de workflows que construye y ejecuta pipelines resilientes con reintentos, guardas y transiciones de estado claras. Permite orquestación local-first de operaciones multi-paso con fiabilidad y observabilidad por defecto.
+Executes DAG-style workflows with guardrails, retries, and traceable outcomes.
+
+## Problema que resuelve
+Automation flows fail without robust retries and state guarantees.
 
 ## Superpoder principal
-- ⚡ **Composable automation graphs with self-healing retries**
+- ⚡ **Composable workflow engine with reliability-first orchestration**
 
-## Estado actual (Febrero 2026)
-- 🚧 Fase de ideación y scaffolding robusto
-- Próximos hitos:
-  - [ ] Finalizar contratos de dominio e interfaces
-  - [ ] Publicar un comando CLI mínimo ejecutable
-  - [ ] Añadir perfil de modelo local Ollama y estrategia de fallback
-  - [ ] Implementar un ejemplo completo end-to-end
-  - [ ] Añadir puertas de calidad (lint, typecheck, test)
-  - [ ] Publicar arquitectura y runbook operativo
-
-## Arquitectura planeada (stack gratuito/open-source)
-- **Lenguaje principal:** Python 3.11+
-- **Framework agente:** LangGraph
-- **Modelos locales:** Ollama (Llama 3.1, Qwen2.5, DeepSeek-Coder, Mistral)
-- **Dependencias clave:** httpx, sqlalchemy, pydantic, tenacity, typer
-- **Modelo de ejecución:** local-first, despliegue self-hosted opcional
-
-## Blueprint de capacidades
-- ✅ Workflow graph DSL
-- ✅ Retry orchestration
-- ✅ Idempotent steps
-- ✅ Secrets abstraction
-- ✅ Observability hooks
+## Casos de uso clave
+- ✅ Task orchestration
+- ✅ Pipeline automation
+- ✅ Self-healing retries
+- ✅ Local-first ops workflows
 
 
-## Estructura del proyecto
-```text
-Fluxenrath/
-├── src/fluxenrath/
-│   ├── core/           # orquestación de dominio y políticas
-│   ├── adapters/       # integraciones externas y puentes de herramientas
-│   ├── memory/         # estado, recuperación y estrategias de contexto
-│   └── cli.py          # interfaz de comandos local para operación
-├── docs/
-│   ├── IMPLEMENTATION.md
-│   ├── ARCHITECTURE.md
-│   └── RUNBOOK.md
-├── examples/
-├── tests/
-├── requirements.txt
-└── README.md
-```
+## Superficie API
+`GET /`, `POST /run` (planned), `GET /health`
+
+## Stack técnico
+- **Stack base:** FastAPI + workflow graph runtime
+- **Ejecución:** local-first, apto para self-hosting
+- **Infra:** compatibilidad con Docker Compose + Caddy + Redis/Chroma/Ollama
+
+## Estado actual (Feb 2026)
+- ✅ Scaffold público disponible
+- ✅ README bilingüe (EN por defecto + ES)
+- ✅ Base de CI + release configurada
+- 🚧 Endurecimiento de funcionalidades en progreso
 
 ## Inicio rápido
 ```bash
 git clone https://github.com/smouj/Fluxenrath.git
 cd Fluxenrath
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.fluxenrath.cli --help
 ```
@@ -83,10 +64,9 @@ python -m src.fluxenrath.cli --help
 - [Guía de despliegue](./docs/DEPLOYMENT.md)
 - [Proceso de releases](./docs/RELEASE.md)
 - [Changelog](./CHANGELOG.md)
-- [Contribución](./CONTRIBUTING.md)
 
 ## Contribución
-Las contribuciones son bienvenidas. Lee **CONTRIBUTING.md** antes de abrir issues o PRs.
+Las contribuciones son bienvenidas. Lee [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Licencia
 MIT © 2026 smouj
